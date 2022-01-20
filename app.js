@@ -9,7 +9,7 @@ var reader = new Reader();
 var writer = new Writer();
 
 async function main() {
-    let data = await reader.Read('./test.csv');
+    let data = await reader.Read('./file.csv');
     var processedData = Processor.Process(data);
 
     let table = new Table(processedData);
@@ -18,7 +18,7 @@ async function main() {
 
     writer.Write('./ConvertedFiles/html/file'+Date.now()+'.html', html);
 
-    PDFWriter.WritePDF('./ConvertedFiles/pdf/file'+Date.now()+'.pdf', html)
+    PDFWriter.WritePDF('./ConvertedFiles/pdf/file'+Date.now()+'.pdf', html);
 }
 
 main();
